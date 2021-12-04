@@ -1,4 +1,4 @@
-import { Genre, Level, PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN } from 'const';
+import { ESC_KEY_CODE, Genre, Level, PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN } from 'const';
 import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
 import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
@@ -56,4 +56,12 @@ const getGenre = (type) => {
 const getGenreQuests = (quests, type) => (type === Genre.ALL.type) ? quests : quests.filter((quest) => quest.type === type);
 const getPeopleCountTemplate = (peopleCount) => `${peopleCount[PEOPLE_COUNT_MIN]}–${peopleCount[PEOPLE_COUNT_MAX]} чел`;
 
-export {getLevel, getIcon, getGenre, getGenreQuests, getPeopleCountTemplate};
+const pressEscKey = (callback) => {
+  return (evt) => {
+    if (evt.keyCode === ESC_KEY_CODE) {
+      callback(false);
+    }
+  };
+};
+
+export {getLevel, getIcon, getGenre, getGenreQuests, getPeopleCountTemplate, pressEscKey};

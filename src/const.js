@@ -2,6 +2,7 @@ const REPLACED_ID = ':id';
 const PEOPLE_COUNT_MIN = 0;
 const PEOPLE_COUNT_MAX = 1;
 const DEFAULT_MENU_SELECTED = 'Квесты';
+const ESC_KEY_CODE = 27;
 
 const AppRoute = {
   Home: '/',
@@ -84,4 +85,4 @@ const Menu = {
 const genres = [Genre.ALL, Genre.ADVENTURES, Genre.HORROR, Genre.MYSTIC, Genre.DETECTIVE, Genre.SCI_FI]
 const menuItems = [Menu.QUESTS, Menu.BEFINNERS, Menu.REVIEWS, Menu.STOCKS, Menu.CONTACTS];
 
-export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, AppRoute, Level, Genre, genres, menuItems};
+export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Genre, genres, menuItems};
