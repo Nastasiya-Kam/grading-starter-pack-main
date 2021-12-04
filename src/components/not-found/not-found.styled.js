@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Container, Link as RouterLink  } from 'components/common/common';
 
 const Main = styled(Container)`
@@ -12,21 +12,6 @@ const Main = styled(Container)`
     max-width: initial;
     padding-left: 32px;
     padding-right: 33px;
-  }
-
-  &:after {
-    content: '';
-    z-index: 4;
-    position: fixed;
-    display: block;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 80px;
-
-    background: linear-gradient(180deg, rgba(19, 18, 18, 0) 0%, #131212 100%);
-    opacity: 0.8;
-    pointer-events: none;
   }
 `;
 
