@@ -7,14 +7,14 @@ import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import { quests } from 'utils/mocks';
 
-const DetailedQuest = (id) => {
+const DetailedQuest = ({id}) => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
 
-  const currentQuest = quests.filter((quest) => quest.id === id);
+  const currentQuest = quests.filter((quest) => quest.id === id)[0];
 
   return (
     <MainLayout>

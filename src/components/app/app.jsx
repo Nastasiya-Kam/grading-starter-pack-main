@@ -22,7 +22,7 @@ const App = () => (
           path={AppRoute.DETAILED_QUEST}
           render={(routerProps) => {
             const id = parseInt(routerProps?.match?.params?.id, 10);
-            return <DetailedQuest currentId={id} />;
+            return <DetailedQuest id={id} />;
           }}
         >
         </Route>
