@@ -9,7 +9,7 @@ const NotFound = () => (
     <S.Main forwardedAs="main">
       <PageHeading>
       </PageHeading>
-      <p>404 Страница не найдена</p>
+      <S.PageText>404 Страница не найдена</S.PageText>
       <S.Link to="/">Вернуться на главную страницу</S.Link>
     </S.Main>
   </MainLayout>
