@@ -1,6 +1,7 @@
 const REPLACED_ID = ':id';
 const PEOPLE_COUNT_MIN = 0;
 const PEOPLE_COUNT_MAX = 1;
+const DEFAULT_MENU_SELECTED = 'Квесты';
 
 const AppRoute = {
   Home: '/',
@@ -57,6 +58,30 @@ const Genre = {
   },
 };
 
-const genres = [Genre.ALL, Genre.ADVENTURES, Genre.HORROR, Genre.MYSTIC, Genre.DETECTIVE, Genre.SCI_FI]
+const Menu = {
+  QUESTS: {
+    name: 'Квесты',
+    route: AppRoute.Home,
+  },
+  BEFINNERS: {
+    name: 'Новичкам',
+    route: AppRoute.Beginners,
+  },
+  REVIEWS: {
+    name: 'Отзывы',
+    route: AppRoute.Reviews,
+  },
+  STOCKS: {
+    name: 'Акции',
+    route: AppRoute.Stocks,
+  },
+  CONTACTS: {
+    name: 'Контакты',
+    route: AppRoute.Contacts,
+  },
+};
 
-export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, AppRoute, Level, Genre, genres};
+const genres = [Genre.ALL, Genre.ADVENTURES, Genre.HORROR, Genre.MYSTIC, Genre.DETECTIVE, Genre.SCI_FI]
+const menuItems = [Menu.QUESTS, Menu.BEFINNERS, Menu.REVIEWS, Menu.STOCKS, Menu.CONTACTS];
+
+export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, AppRoute, Level, Genre, genres, menuItems};

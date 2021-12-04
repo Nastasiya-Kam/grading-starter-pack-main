@@ -1,9 +1,12 @@
 import logo from 'assets/img/logo.svg';
-import { AppRoute } from 'const';
+import { DEFAULT_MENU_SELECTED, menuItems } from 'const';
+import { useState } from 'react';
 import * as S from './header.styled';
 
-const Header = () => (
-  <S.StyledHeader>
+const Header = () => {
+  const [currentMenu, setCurrentMenu] = useState(DEFAULT_MENU_SELECTED);
+
+  return (<S.StyledHeader>
     <S.HeaderWrapper>
       <S.Logo href="/">
         <S.Image src={logo} alt="Логотип Escape Room" width="134" height="50" />
@@ -11,32 +14,25 @@ const Header = () => (
 
       <S.Navigation>
         <S.Links>
-          <S.LinkItem>
-            <S.Link $isActiveLink to={AppRoute.Home}>
-              Квесты
-            </S.Link>
-          </S.LinkItem>
+          {menuItems.map((item, index) => {
+            const key = `${index}-${item.name}`;
 
-          <S.LinkItem>
-            <S.Link to={AppRoute.Beginners}>Новичкам</S.Link>
-          </S.LinkItem>
-
-          <S.LinkItem>
-            <S.Link to={AppRoute.Reviews}>Отзывы</S.Link>
-          </S.LinkItem>
-
-          <S.LinkItem>
-            <S.Link to={AppRoute.Stocks}>Акции</S.Link>
-          </S.LinkItem>
-
-          <S.LinkItem>
-            <S.Link to={AppRoute.Contacts}>Контакты</S.Link>
-          </S.LinkItem>
+            return (<S.LinkItem key={key}>
+              <S.Link
+                $isActiveLink={item.name === currentMenu}
+                // TODO додедлать. Поместить в глобальный store?
+                onClick={() => setCurrentMenu(item.name)}
+                to={item.route}
+              >
+                {item.name}
+              </S.Link>
+            </S.LinkItem>);
+          })}
         </S.Links>
       </S.Navigation>
       <S.Phone href="tel:88003335599">8 (800) 333-55-99</S.Phone>
     </S.HeaderWrapper>
   </S.StyledHeader>
-);
+);}
 
 export default Header;
