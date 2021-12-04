@@ -17,7 +17,36 @@ const Level = {
   },
 };
 
+const Genre = {
+  ALL: {
+    name: 'Все квесты',
+    type: 'all',
+  },
+  ADVENTURES: {
+    name: 'Приключения',
+    type: 'adventures',
+  },
+  HORROR: {
+    name: 'Ужасы',
+    type: 'horror',
+  },
+  MYSTIC: {
+    name: 'Мистика',
+    type: 'mystic',
+  },
+  DETECTIVE: {
+    name: 'Детектив',
+    type: 'detective',
+  },
+  SCI_FI: {
+    name: 'Sci-fi',
+    type: 'sci-fi',
+  },
+};
+
+const genres = [Genre.ALL, Genre.ADVENTURES, Genre.HORROR, Genre.MYSTIC, Genre.DETECTIVE, Genre.SCI_FI]
+
 const PEOPLE_COUNT_MIN = 0;
 const PEOPLE_COUNT_MAX = 1;
 
-export {Level, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX};
+export {Level, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, Genre, genres};
