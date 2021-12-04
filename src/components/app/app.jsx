@@ -10,19 +10,26 @@ import Home from 'components/home/home';
 import NotFound from 'components/not-found/not-found';
 import { appTheme } from './common';
 import * as S from './app.styled';
+import { AppRoute } from 'const';
 
 const App = () => (
   <ThemeProvider theme={appTheme}>
     <S.GlobalStyle />
     <Router>
       <Switch>
-        <Route exact path="/quest">
-          <DetailedQuest />
+        <Route
+          exact
+          path={AppRoute.DETAILED_QUEST}
+          render={(routerProps) => {
+            const id = parseInt(routerProps?.match?.params?.id, 10);
+            return <DetailedQuest currentId={id} />;
+          }}
+        >
         </Route>
-        <Route exact path="/contacts">
+        <Route exact path={AppRoute.CONTACTS}>
           <Contacts />
         </Route>
-        <Route exact path="/">
+        <Route exact path={AppRoute.HOME}>
           <Home />
         </Route>
         <Route>

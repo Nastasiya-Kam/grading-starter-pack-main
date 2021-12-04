@@ -1,3 +1,13 @@
+const REPLACED_ID = ':id';
+const PEOPLE_COUNT_MIN = 0;
+const PEOPLE_COUNT_MAX = 1;
+
+const AppRoute = {
+  HOME: '/',
+  CONTACTS: '/contacts',
+  DETAILED_QUEST: '/detailed-quest/:id',
+}
+
 const Level = {
   EASY: {
     value: 'простой',
@@ -46,7 +56,4 @@ const Genre = {
 
 const genres = [Genre.ALL, Genre.ADVENTURES, Genre.HORROR, Genre.MYSTIC, Genre.DETECTIVE, Genre.SCI_FI]
 
-const PEOPLE_COUNT_MIN = 0;
-const PEOPLE_COUNT_MAX = 1;
-
-export {Level, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, Genre, genres};
+export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, AppRoute, Level, Genre, genres};

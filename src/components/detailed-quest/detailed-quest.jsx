@@ -5,13 +5,16 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
+import { quests } from 'utils/mocks';
 
-const DetailedQuest = () => {
+const DetailedQuest = (id) => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
 
   const onBookingBtnClick = () => {
     setIsBookingModalOpened(true);
   };
+
+  const currentQuest = quests.filter((quest) => quest.id === id);
 
   return (
     <MainLayout>

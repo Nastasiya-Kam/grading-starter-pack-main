@@ -3,7 +3,7 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
 import { quests } from 'utils/mocks';
 import { getLevel, getIcon, getGenreQuests } from 'utils/utils';
-import { PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN, Genre, genres } from 'const';
+import { PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN, Genre, genres, AppRoute, REPLACED_ID } from 'const';
 import { useState } from 'react';
 
 const QuestsCatalog = () => {
@@ -31,7 +31,7 @@ const QuestsCatalog = () => {
       <S.QuestsList>
         {genreQuests.map((quest) => {
           return <S.QuestItem key={quest.id}>
-            <S.QuestItemLink to="/quest">
+            <S.QuestItemLink to={AppRoute.DETAILED_QUEST.replace(REPLACED_ID, String(quest.id))}>
               <S.Quest>
                 <S.QuestImage
                   src={quest.previewImg}
