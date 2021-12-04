@@ -2,8 +2,8 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
 import { quests } from 'utils/mocks';
-import { getLevel, getIcon, getGenreQuests } from 'utils/utils';
-import { PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN, Genre, genres, AppRoute, REPLACED_ID } from 'const';
+import { getLevel, getIcon, getGenreQuests, getPeopleCountTemplate } from 'utils/utils';
+import { Genre, genres, AppRoute, REPLACED_ID } from 'const';
 import { useState } from 'react';
 
 const QuestsCatalog = () => {
@@ -46,7 +46,7 @@ const QuestsCatalog = () => {
                   <S.QuestFeatures>
                     <S.QuestFeatureItem>
                       <IconPerson />
-                      {`${quest.peopleCount[PEOPLE_COUNT_MIN]}–${quest.peopleCount[PEOPLE_COUNT_MAX]} чел`}
+                      {getPeopleCountTemplate(quest.peopleCount)}
                     </S.QuestFeatureItem>
                     <S.QuestFeatureItem>
                       <IconPuzzle />

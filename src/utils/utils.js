@@ -1,4 +1,4 @@
-import { Genre, Level } from 'const';
+import { Genre, Level, PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN } from 'const';
 import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
 import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
@@ -36,6 +36,24 @@ const getIcon = (type) => {
   }
 };
 
-const getGenreQuests = (quests, type) => (type === Genre.ALL.type) ? quests : quests.filter((quest) => quest.type === type);
+const getGenre = (type) => {
+  switch (type) {
+    case Genre.ADVENTURES.type:
+      return Genre.ADVENTURES.name;
+    case Genre.HORROR.type:
+      return Genre.HORROR.name;
+    case Genre.MYSTIC.type:
+      return Genre.MYSTIC.name;
+    case Genre.DETECTIVE.type:
+      return Genre.DETECTIVE.name;
+    case Genre.SCI_FI.type:
+      return Genre.SCI_FI.name;
+    default:
+      return;
+  }
+};
 
-export {getLevel, getIcon, getGenreQuests};
+const getGenreQuests = (quests, type) => (type === Genre.ALL.type) ? quests : quests.filter((quest) => quest.type === type);
+const getPeopleCountTemplate = (peopleCount) => `${peopleCount[PEOPLE_COUNT_MIN]}–${peopleCount[PEOPLE_COUNT_MAX]} чел`;
+
+export {getLevel, getIcon, getGenre, getGenreQuests, getPeopleCountTemplate};
