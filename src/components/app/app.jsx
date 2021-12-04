@@ -8,6 +8,7 @@ import DetailedQuest from 'components/detailed-quest/detailed-quest';
 import Contacts from 'components/contacts/contacts';
 import Home from 'components/home/home';
 import NotFound from 'components/not-found/not-found';
+import StubPage from 'components/stub-page/stub-page';
 import { appTheme } from './common';
 import * as S from './app.styled';
 import { AppRoute } from 'const';
@@ -19,18 +20,27 @@ const App = () => (
       <Switch>
         <Route
           exact
-          path={AppRoute.DETAILED_QUEST}
+          path={AppRoute.DetailedQuest}
           render={(routerProps) => {
             const id = parseInt(routerProps?.match?.params?.id, 10);
             return <DetailedQuest id={id} />;
           }}
         >
         </Route>
-        <Route exact path={AppRoute.CONTACTS}>
+        <Route exact path={AppRoute.Contacts}>
           <Contacts />
         </Route>
-        <Route exact path={AppRoute.HOME}>
+        <Route exact path={AppRoute.Home}>
           <Home />
+        </Route>
+        <Route exact path={AppRoute.Beginners}>
+          <StubPage />
+        </Route>
+        <Route exact path={AppRoute.Reviews}>
+          <StubPage />
+        </Route>
+        <Route exact path={AppRoute.Stocks}>
+          <StubPage />
         </Route>
         <Route>
           <NotFound />

@@ -1,4 +1,5 @@
 import logo from 'assets/img/logo.svg';
+import { AppRoute } from 'const';
 import * as S from './header.styled';
 
 const Header = () => (
@@ -11,25 +12,25 @@ const Header = () => (
       <S.Navigation>
         <S.Links>
           <S.LinkItem>
-            <S.Link $isActiveLink to="/">
+            <S.Link $isActiveLink to={AppRoute.Home}>
               Квесты
             </S.Link>
           </S.LinkItem>
 
           <S.LinkItem>
-            <S.Link to="#">Новичкам</S.Link>
+            <S.Link to={AppRoute.Beginners}>Новичкам</S.Link>
           </S.LinkItem>
 
           <S.LinkItem>
-            <S.Link to="#">Отзывы</S.Link>
+            <S.Link to={AppRoute.Reviews}>Отзывы</S.Link>
           </S.LinkItem>
 
           <S.LinkItem>
-            <S.Link to="#">Акции</S.Link>
+            <S.Link to={AppRoute.Stocks}>Акции</S.Link>
           </S.LinkItem>
 
           <S.LinkItem>
-            <S.Link to="/contacts">Контакты</S.Link>
+            <S.Link to={AppRoute.Contacts}>Контакты</S.Link>
           </S.LinkItem>
         </S.Links>
       </S.Navigation>

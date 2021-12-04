@@ -3,9 +3,12 @@ const PEOPLE_COUNT_MIN = 0;
 const PEOPLE_COUNT_MAX = 1;
 
 const AppRoute = {
-  HOME: '/',
-  CONTACTS: '/contacts',
-  DETAILED_QUEST: '/detailed-quest/:id',
+  Home: '/',
+  Contacts: '/contacts',
+  DetailedQuest: '/detailed-quest/:id',
+  Beginners: '/beginners',
+  Reviews: '/reviews',
+  Stocks: '/stocks',
 }
 
 const Level = {

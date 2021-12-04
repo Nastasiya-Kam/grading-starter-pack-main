@@ -31,7 +31,7 @@ const QuestsCatalog = () => {
       <S.QuestsList>
         {genreQuests.map((quest) => {
           return <S.QuestItem key={quest.id}>
-            <S.QuestItemLink to={AppRoute.DETAILED_QUEST.replace(REPLACED_ID, String(quest.id))}>
+            <S.QuestItemLink to={AppRoute.DetailedQuest.replace(REPLACED_ID, String(quest.id))}>
               <S.Quest>
                 <S.QuestImage
                   src={quest.previewImg}
