@@ -22,9 +22,16 @@ const fetchQuestAction = (id) =>
     dispatch(isQuestLoading(false));
   };
 
-const postOrderAction = ({name, peopleCount, phone, isLegal}) =>
+const postOrderAction = ({name, peopleCount, phone, isLegal}, setIsSending, onClose) =>
   async (dispatch, _getState, api) => {
-    await api.post(APIRoute.Order, {name, peopleCount, phone, isLegal});
+    try {
+      setIsSending(true);
+      await api.post(APIRoute.Order, {name, peopleCount, phone, isLegal});
+      onClose(false);
+    } catch (error) {
+      setIsSending(false);
+      throw (error);
+    }
   }
 
 export { fetchQuestsAction, fetchQuestAction, postOrderAction };

@@ -1,11 +1,12 @@
 import * as S from './booking-modal.styled';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { pressEscKey } from 'utils/utils';
 import { useDispatch } from 'react-redux';
 import { postOrderAction } from 'store/api-actions';
 
 const BookingModal = ({onClose}) => {
+  const [isSending, setIsSending] = useState(false);
   const dispatch = useDispatch();
 
   const nameRef = useRef(null);
@@ -39,17 +40,22 @@ const BookingModal = ({onClose}) => {
         onSubmit={(evt) => {
           evt.preventDefault();
 
-          dispatch(postOrderAction({
-            name: nameRef.current.value,
-            peopleCount: Number(peopleCountRef.current.value, 10),
-            phone: phoneRef.current.value,
-            isLegal: isLegalRef.current.checked,
-          }));
+          dispatch(postOrderAction(
+            {
+              name: nameRef.current.value,
+              peopleCount: Number(peopleCountRef.current.value, 10),
+              phone: phoneRef.current.value,
+              isLegal: isLegalRef.current.checked,
+            },
+            setIsSending,
+            onClose
+          ));
         }}
       >
         <S.BookingField>
           <S.BookingLabel htmlFor="booking-name">Ваше Имя</S.BookingLabel>
           <S.BookingInput
+            disabled={isSending}
             ref={nameRef}
             type="text"
             id="booking-name"
@@ -63,6 +69,7 @@ const BookingModal = ({onClose}) => {
             Контактный телефон
           </S.BookingLabel>
           <S.BookingInput
+            disabled={isSending}
             ref={phoneRef}
             type="tel"
             id="booking-phone"
@@ -76,6 +83,7 @@ const BookingModal = ({onClose}) => {
             Количество участников
           </S.BookingLabel>
           <S.BookingInput
+            disabled={isSending}
             ref={peopleCountRef}
             type="number"
             id="booking-people"
@@ -84,9 +92,14 @@ const BookingModal = ({onClose}) => {
             required
           />
         </S.BookingField>
-        <S.BookingSubmit type="submit">Отправить заявку</S.BookingSubmit>
+        <S.BookingSubmit
+          disabled={isSending}
+          type="submit">
+          Отправить заявку
+        </S.BookingSubmit>
         <S.BookingCheckboxWrapper>
           <S.BookingCheckboxInput
+            disabled={isSending}
             ref={isLegalRef}
             type="checkbox"
             id="booking-legal"
