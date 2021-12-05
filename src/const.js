@@ -91,4 +91,22 @@ const APIRoute = {
   Order: '/orders',
 }
 
-export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Type, Menu, genres, menuItems, APIRoute};
+const User = {
+  Name: 'booking-name',
+  Phone: 'booking-phone',
+  PeopleCount: 'booking-people',
+  Legal: 'booking-legal',
+};
+
+const ErrorMessage = {
+  NameEmpty: 'Имя не может быть пустым',
+  PhoneEmpty: 'Телефон не может быть пустым',
+  PhoneSymbols: 'Телефон должен содержать 10 цифр',
+  PeopleCountEmpty: 'Количество человек не может быть пустым',
+  LegalEmpty: 'Чтобы продолжить необходимо согласиться',
+  Correct: '',
+};
+
+const EMPTY_LENGTH = 0;
+
+export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Type, Menu, genres, menuItems, APIRoute, User, ErrorMessage, EMPTY_LENGTH};

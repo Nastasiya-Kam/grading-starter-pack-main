@@ -64,4 +64,9 @@ const pressEscKey = (callback) => {
   };
 };
 
-export {getLevel, getIcon, getType, getTypeQuests, getPeopleCountTemplate, pressEscKey};
+const checkPhone = (phone) => {
+  const patternPhone = /^[0-9]{10}$/;
+  return patternPhone.test(phone);
+};
+
+export {getLevel, getIcon, getType, getTypeQuests, getPeopleCountTemplate, pressEscKey, checkPhone};

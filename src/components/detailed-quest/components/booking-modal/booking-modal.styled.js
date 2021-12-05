@@ -86,6 +86,20 @@ const BookingField = styled.p`
   }
 `;
 
+const BookingFieldError = styled.span`
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+  padding: 0;
+  padding-right: 16px;
+  color: ${({ theme }) => theme.color.tangerine};
+
+  &:not(:last-of-type) {
+    margin-bottom: 30px;
+  }
+`;
+
 const BookingLabel = styled.label`
   margin-bottom: 15px;
   color: ${({ theme }) => theme.color.whisper2};
@@ -132,6 +146,11 @@ const BookingSubmit = styled(Button)`
   &:focus,
   &:hover {
     background-color: ${({ theme }) => theme.color.gray};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.color.pinkSwan};
+    cursor: default;
   }
 `;
 
@@ -218,6 +237,7 @@ export {
   ModalTitle,
   BookingForm,
   BookingField,
+  BookingFieldError,
   BookingLabel,
   BookingInput,
   BookingSubmit,
