@@ -1,16 +1,16 @@
 import logo from 'assets/img/logo.svg';
-import { DEFAULT_MENU_SELECTED, menuItems, Type } from 'const';
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { changeType } from 'store/actions';
+import { menuItems } from 'const';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeCurrentItemMenu } from 'store/actions';
+import { getCurrentItemMenu } from 'store/selectors';
 import * as S from './header.styled';
 
 const Header = () => {
-  const [currentMenu, setCurrentMenu] = useState(DEFAULT_MENU_SELECTED);
+  const currentMenuItem = useSelector(getCurrentItemMenu);
 
   const dispatch = useDispatch();
-  const onClick = () => {
-    dispatch(changeType(Type.ALL.type));
+  const onCurrentItemMenuChange = (item) => {
+    dispatch(changeCurrentItemMenu(item));
   };
 
   return (<S.StyledHeader>
@@ -26,12 +26,8 @@ const Header = () => {
 
             return (<S.LinkItem key={key}>
               <S.Link
-                $isActiveLink={item.name === currentMenu}
-                // TODO додедлать. Поместить в глобальный store?
-                onClick={() => {
-                  setCurrentMenu(item.name);
-                  onClick();
-                }}
+                $isActiveLink={item.name === currentMenuItem}
+                onClick={() => onCurrentItemMenuChange(item.name)}
                 to={item.route}
               >
                 {item.name}

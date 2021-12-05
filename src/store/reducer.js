@@ -1,12 +1,13 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { Type } from 'const';
-import { changeType, loadQuest, loadQuests, postOrder } from './actions';
+import { DEFAULT_MENU_SELECTED, Type } from 'const';
+import { changeType, loadQuest, loadQuests, postOrder, changeCurrentItemMenu } from './actions';
 
 const initialState = {
   currentType: Type.ALL.type,
   quests: [],
   quest: {},
   order: {},
+  currentItemMenu: DEFAULT_MENU_SELECTED,
 };
 
 const questsData = createReducer(initialState, (builder) => {
@@ -22,6 +23,10 @@ const questsData = createReducer(initialState, (builder) => {
     })
     .addCase(postOrder, (state, action) => {
       state.order = action.payload;
+    })
+    .addCase(changeCurrentItemMenu, (state, action) => {
+      state.currentItemMenu = action.payload;
+      state.currentType = Type.ALL.type;
     });
 });
 

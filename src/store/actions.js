@@ -1,10 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
+import { Type } from 'const';
 
 const ActionType = {
   ChangeType: 'genre/changeType',
   LoadQuests: 'quests/loadQuests',
   LoadQuest: 'quests/loadQuest',
   PostOrder: 'order/postOrder',
+  ChangeCurrentItemMenu: 'menu/changeCurrentItemMenu'
 }
 
 const changeType = createAction(
@@ -35,9 +37,17 @@ const postOrder = createAction(
   }),
 );
 
+const changeCurrentItemMenu = createAction(
+  ActionType.ChangeCurrentItemMenu,
+  (item) => ({
+    payload: item,
+  }),
+);
+
 export {
   changeType,
   loadQuests,
   loadQuest,
-  postOrder
+  postOrder,
+  changeCurrentItemMenu
 };
