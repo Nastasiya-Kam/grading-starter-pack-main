@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Container, Link as RouterLink  } from 'components/common/common';
+import { Container } from 'components/common/common';
 
 const Main = styled(Container)`
   max-width: 1080px;
@@ -12,22 +12,6 @@ const Main = styled(Container)`
     max-width: initial;
     padding-left: 32px;
     padding-right: 33px;
-  }
-`;
-
-const Link = styled(RouterLink)`
-  display: block;
-  font-size: ${({ theme }) => theme.font.semibase};
-  line-height: 16px;
-  letter-spacing: 0.03em;
-  font-weight: 600;
-  text-transform: uppercase;
-
-  color: ${({ theme }) => theme.color.whiteSmoke};
-
-  &:focus,
-  &:hover {
-    color: ${({ theme }) => theme.color.tangerine};
   }
 `;
 
@@ -44,6 +28,5 @@ const PageText = styled.p`
 
 export {
   Main,
-  Link,
   PageText
 };

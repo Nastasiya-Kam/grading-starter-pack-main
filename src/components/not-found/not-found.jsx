@@ -1,6 +1,7 @@
 import {
   MainLayout,
   PageHeading,
+  HomeLink
 } from 'components/common/common';
 import * as S from './not-found.styled';
 
@@ -10,7 +11,7 @@ const NotFound = () => (
       <PageHeading>
       </PageHeading>
       <S.PageText>404 Страница не найдена</S.PageText>
-      <S.Link to="/">Вернуться на главную страницу</S.Link>
+      <HomeLink />
     </S.Main>
   </MainLayout>
 );

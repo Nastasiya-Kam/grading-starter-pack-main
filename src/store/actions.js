@@ -1,5 +1,4 @@
 import { createAction } from '@reduxjs/toolkit';
-import { Type } from 'const';
 
 const ActionType = {
   ChangeType: 'genre/changeType',
