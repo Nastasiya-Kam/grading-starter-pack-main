@@ -32,7 +32,7 @@ const Level = {
   },
 };
 
-const Genre = {
+const Type = {
   ALL: {
     name: 'Все квесты',
     type: 'all',
@@ -82,7 +82,7 @@ const Menu = {
   },
 };
 
-const genres = [Genre.ALL, Genre.ADVENTURES, Genre.HORROR, Genre.MYSTIC, Genre.DETECTIVE, Genre.SCI_FI]
+const genres = [Type.ALL, Type.ADVENTURES, Type.HORROR, Type.MYSTIC, Type.DETECTIVE, Type.SCI_FI]
 const menuItems = [Menu.QUESTS, Menu.BEFINNERS, Menu.REVIEWS, Menu.STOCKS, Menu.CONTACTS];
 
 const APIRoute = {
@@ -91,4 +91,4 @@ const APIRoute = {
   Order: '/orders',
 }
 
-export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Genre, genres, menuItems, APIRoute};
+export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Type, genres, menuItems, APIRoute};

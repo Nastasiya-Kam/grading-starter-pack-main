@@ -6,7 +6,7 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';
 import { quests } from 'utils/mocks';
-import { getGenre, getLevel, getPeopleCountTemplate } from 'utils/utils';
+import { getType, getLevel, getPeopleCountTemplate } from 'utils/utils';
 
 const DetailedQuest = ({id}) => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState(false);
@@ -30,7 +30,7 @@ const DetailedQuest = ({id}) => {
         <S.PageContentWrapper>
           <S.PageHeading>
             <S.PageTitle>{currentQuest.title}</S.PageTitle>
-            <S.PageSubtitle>{getGenre(currentQuest.type)}</S.PageSubtitle>
+            <S.PageSubtitle>{getType(currentQuest.type)}</S.PageSubtitle>
           </S.PageHeading>
 
           <S.PageDescription>

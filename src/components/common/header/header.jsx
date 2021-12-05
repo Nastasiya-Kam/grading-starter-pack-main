@@ -1,10 +1,17 @@
 import logo from 'assets/img/logo.svg';
-import { DEFAULT_MENU_SELECTED, menuItems } from 'const';
+import { DEFAULT_MENU_SELECTED, menuItems, Type } from 'const';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { changeType } from 'store/actions';
 import * as S from './header.styled';
 
 const Header = () => {
   const [currentMenu, setCurrentMenu] = useState(DEFAULT_MENU_SELECTED);
+
+  const dispatch = useDispatch();
+  const onClick = () => {
+    dispatch(changeType(Type.ALL.type));
+  };
 
   return (<S.StyledHeader>
     <S.HeaderWrapper>
@@ -21,7 +28,10 @@ const Header = () => {
               <S.Link
                 $isActiveLink={item.name === currentMenu}
                 // TODO додедлать. Поместить в глобальный store?
-                onClick={() => setCurrentMenu(item.name)}
+                onClick={() => {
+                  setCurrentMenu(item.name);
+                  onClick();
+                }}
                 to={item.route}
               >
                 {item.name}

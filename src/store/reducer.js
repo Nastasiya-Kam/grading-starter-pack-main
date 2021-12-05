@@ -1,8 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { changeGenre, loadQuest, loadQuests, postOrder } from './actions';
+import { Type } from 'const';
+import { changeType, loadQuest, loadQuests, postOrder } from './actions';
 
 const initialState = {
-  currentGenre: null,
+  currentType: Type.ALL.type,
   quests: [],
   quest: {},
   order: {},
@@ -10,8 +11,8 @@ const initialState = {
 
 const questsData = createReducer(initialState, (builder) => {
   builder
-    .addCase(changeGenre, (state, action) => {
-      state.currentGenre = action.payload;
+    .addCase(changeType, (state, action) => {
+      state.currentType = action.payload;
     })
     .addCase(loadQuests, (state, action) => {
       state.quests = action.payload;

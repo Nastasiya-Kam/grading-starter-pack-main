@@ -1,14 +1,20 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import * as S from './quests-catalog.styled';
-import { quests } from 'utils/mocks';
-import { getLevel, getIcon, getGenreQuests, getPeopleCountTemplate } from 'utils/utils';
-import { Genre, genres, AppRoute, REPLACED_ID } from 'const';
-import { useState } from 'react';
+import { getLevel, getIcon, getPeopleCountTemplate } from 'utils/utils';
+import { genres, AppRoute, REPLACED_ID } from 'const';
+import { useDispatch, useSelector } from 'react-redux';
+import { getCurrentType, getQuestsByType } from 'store/selectors';
+import { changeType } from 'store/actions';
 
 const QuestsCatalog = () => {
-  const [currentGenre, setCurrentGenre] = useState(Genre.ALL.type);
-  const genreQuests = getGenreQuests(quests, currentGenre);
+  const quests = useSelector(getQuestsByType);
+  const type = useSelector(getCurrentType);
+
+  const dispatch = useDispatch();
+  const onTypeChange = (type) => {
+    dispatch(changeType(type));
+  };
 
   return (
     <>
@@ -18,8 +24,8 @@ const QuestsCatalog = () => {
 
           return <S.TabItem key={key}>
             <S.TabBtn
-              isActive={currentGenre === genre.type}
-              onClick={() => setCurrentGenre(genre.type)}
+              isActive={type === genre.type}
+              onClick={() => onTypeChange(genre.type)}
             >
               {getIcon(genre.type)}
               <S.TabTitle>{genre.name}</S.TabTitle>
@@ -29,7 +35,7 @@ const QuestsCatalog = () => {
       </S.Tabs>
 
       <S.QuestsList>
-        {genreQuests.map((quest) => {
+        {quests.map((quest) => {
           return <S.QuestItem key={quest.id}>
             <S.QuestItemLink to={AppRoute.DetailedQuest.replace(REPLACED_ID, String(quest.id))}>
               <S.Quest>

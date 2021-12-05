@@ -1,4 +1,4 @@
-import { ESC_KEY_CODE, Genre, Level, PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN } from 'const';
+import { ESC_KEY_CODE, Type, Level, PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN } from 'const';
 import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
 import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
@@ -21,39 +21,39 @@ const getLevel = (level) => {
 
 const getIcon = (type) => {
   switch (type) {
-    case Genre.ADVENTURES.type:
+    case Type.ADVENTURES.type:
       return <IconAdventures />
-    case Genre.HORROR.type:
+    case Type.HORROR.type:
       return <IconHorrors />
-    case Genre.MYSTIC.type:
+    case Type.MYSTIC.type:
       return <IconMystic />
-    case Genre.DETECTIVE.type:
+    case Type.DETECTIVE.type:
       return <IconDetective />
-    case Genre.SCI_FI.type:
+    case Type.SCI_FI.type:
       return <IconScifi />
     default:
       return <IconAllQuests />
   }
 };
 
-const getGenre = (type) => {
+const getType = (type) => {
   switch (type) {
-    case Genre.ADVENTURES.type:
-      return Genre.ADVENTURES.name;
-    case Genre.HORROR.type:
-      return Genre.HORROR.name;
-    case Genre.MYSTIC.type:
-      return Genre.MYSTIC.name;
-    case Genre.DETECTIVE.type:
-      return Genre.DETECTIVE.name;
-    case Genre.SCI_FI.type:
-      return Genre.SCI_FI.name;
+    case Type.ADVENTURES.type:
+      return Type.ADVENTURES.name;
+    case Type.HORROR.type:
+      return Type.HORROR.name;
+    case Type.MYSTIC.type:
+      return Type.MYSTIC.name;
+    case Type.DETECTIVE.type:
+      return Type.DETECTIVE.name;
+    case Type.SCI_FI.type:
+      return Type.SCI_FI.name;
     default:
       return;
   }
 };
 
-const getGenreQuests = (quests, type) => (type === Genre.ALL.type) ? quests : quests.filter((quest) => quest.type === type);
+const getTypeQuests = (quests, type) => (type === Type.ALL.type) ? quests : quests.filter((quest) => quest.type === type);
 const getPeopleCountTemplate = (peopleCount) => `${peopleCount[PEOPLE_COUNT_MIN]}–${peopleCount[PEOPLE_COUNT_MAX]} чел`;
 
 const pressEscKey = (callback) => {
@@ -64,4 +64,4 @@ const pressEscKey = (callback) => {
   };
 };
 
-export {getLevel, getIcon, getGenre, getGenreQuests, getPeopleCountTemplate, pressEscKey};
+export {getLevel, getIcon, getType, getTypeQuests, getPeopleCountTemplate, pressEscKey};
