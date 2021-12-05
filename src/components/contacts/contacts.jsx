@@ -3,7 +3,7 @@ import contactsMap from 'assets/img/contacts-map.jpg';
 import * as S from './contacts.styled';
 import { useDispatch } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
-import { Menu } from 'const';
+import { Contact, Menu } from 'const';
 
 const Contacts = () => {
   const dispatch = useDispatch();
@@ -35,15 +35,15 @@ const Contacts = () => {
 
             <S.ContactTitle>Телефон</S.ContactTitle>
             <S.ContactValue>
-              <S.ContactLink href="tel:8 (800) 333-55-99">
-                8 (800) 333-55-99
+              <S.ContactLink href={Contact.PHONE.href}>
+              {Contact.PHONE.text}
               </S.ContactLink>
             </S.ContactValue>
 
             <S.ContactTitle>E-mail</S.ContactTitle>
             <S.ContactValue>
-              <S.ContactLink href="mailto:info@escape-room.ru">
-                info@escape-room.ru
+              <S.ContactLink href={Contact.EMAIL.href}>
+              {Contact.EMAIL.text}
               </S.ContactLink>
             </S.ContactValue>
           </S.ContactsList>

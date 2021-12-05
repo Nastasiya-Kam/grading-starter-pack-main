@@ -1,5 +1,5 @@
 import logo from 'assets/img/logo.svg';
-import { menuItems } from 'const';
+import { Contact, menuItems } from 'const';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
 import { getCurrentItemMenu } from 'store/selectors';
@@ -36,7 +36,7 @@ const Header = () => {
           })}
         </S.Links>
       </S.Navigation>
-      <S.Phone href="tel:88003335599">8 (800) 333-55-99</S.Phone>
+      <S.Phone href={Contact.PHONE.href}>{Contact.PHONE.text}</S.Phone>
     </S.HeaderWrapper>
   </S.StyledHeader>
 );}

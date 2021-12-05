@@ -109,4 +109,32 @@ const ErrorMessage = {
 
 const EMPTY_LENGTH = 0;
 
-export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Type, Menu, genres, menuItems, APIRoute, User, ErrorMessage, EMPTY_LENGTH};
+const Contact = {
+  PHONE: {
+    href: 'tel:8 (800) 333-55-99',
+    text: '8 (800) 333-55-99',
+  },
+  EMAIL: {
+    href: 'mailto:info@escape-room.ru',
+    text: 'info@escape-room.ru',
+  },
+}
+
+export {
+  REPLACED_ID,
+  PEOPLE_COUNT_MIN,
+  PEOPLE_COUNT_MAX,
+  DEFAULT_MENU_SELECTED,
+  ESC_KEY_CODE,
+  AppRoute,
+  Level,
+  Type,
+  Menu,
+  genres,
+  menuItems,
+  APIRoute,
+  User,
+  ErrorMessage,
+  EMPTY_LENGTH,
+  Contact
+};
