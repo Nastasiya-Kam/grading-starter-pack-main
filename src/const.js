@@ -3,6 +3,8 @@ const PEOPLE_COUNT_MIN = 0;
 const PEOPLE_COUNT_MAX = 1;
 const DEFAULT_MENU_SELECTED = 'Квесты';
 const ESC_KEY_CODE = 27;
+const POSITION = [59.968137, 30.316272];
+const ZOOM = 17;
 
 const AppRoute = {
   Home: '/',
@@ -126,6 +128,8 @@ export {
   PEOPLE_COUNT_MAX,
   DEFAULT_MENU_SELECTED,
   ESC_KEY_CODE,
+  POSITION,
+  ZOOM,
   AppRoute,
   Level,
   Type,

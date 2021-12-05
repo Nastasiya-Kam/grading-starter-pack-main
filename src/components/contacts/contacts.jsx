@@ -1,11 +1,13 @@
-import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
+import { MainLayout, PageTitle, PageSubtext, InteractiveMap } from 'components/common/common';
 import contactsMap from 'assets/img/contacts-map.jpg';
-import * as S from './contacts.styled';
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { changeCurrentItemMenu } from 'store/actions';
 import { Contact, Menu } from 'const';
+import * as S from './contacts.styled';
 
 const Contacts = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
 
   dispatch(changeCurrentItemMenu(Menu.CONTACTS.name));
@@ -49,12 +51,13 @@ const Contacts = () => {
           </S.ContactsList>
 
           <S.ContactsMap>
-            <S.ContactsMapImage
+            {!isLoaded && <S.ContactsMapImage
               src={contactsMap}
               alt="мы находимся по адресу Санкт-Петербург, Набережная реки Карповка, д 5"
               width="649"
               height="336"
-            />
+            />}
+            <InteractiveMap onLoaded={setIsLoaded} />
           </S.ContactsMap>
         </S.Contacts>
       </S.ContentWrapper>
