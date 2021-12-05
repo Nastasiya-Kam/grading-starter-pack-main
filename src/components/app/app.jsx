@@ -11,7 +11,7 @@ import NotFound from 'components/not-found/not-found';
 import StubPage from 'components/stub-page/stub-page';
 import { appTheme } from './common';
 import * as S from './app.styled';
-import { AppRoute } from 'const';
+import { AppRoute, Menu } from 'const';
 
 const App = () => (
   <ThemeProvider theme={appTheme}>
@@ -34,13 +34,13 @@ const App = () => (
           <Home />
         </Route>
         <Route exact path={AppRoute.Beginners}>
-          <StubPage />
+          <StubPage page={Menu.BEFINNERS.name} />
         </Route>
         <Route exact path={AppRoute.Reviews}>
-          <StubPage />
+          <StubPage page={Menu.REVIEWS.name} />
         </Route>
         <Route exact path={AppRoute.Stocks}>
-          <StubPage />
+          <StubPage page={Menu.STOCKS.name} />
         </Route>
         <Route>
           <NotFound />

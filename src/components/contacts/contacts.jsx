@@ -1,8 +1,16 @@
 import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
 import contactsMap from 'assets/img/contacts-map.jpg';
 import * as S from './contacts.styled';
+import { useDispatch } from 'react-redux';
+import { changeCurrentItemMenu } from 'store/actions';
+import { Menu } from 'const';
 
-const Contacts = () => (
+const Contacts = () => {
+  const dispatch = useDispatch();
+
+  dispatch(changeCurrentItemMenu(Menu.CONTACTS.name));
+
+  return (
   <MainLayout>
     <S.Main>
       <S.ContentWrapper>
@@ -52,6 +60,6 @@ const Contacts = () => (
       </S.ContentWrapper>
     </S.Main>
   </MainLayout>
-);
+)};
 
 export default Contacts;

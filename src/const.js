@@ -91,4 +91,4 @@ const APIRoute = {
   Order: '/orders',
 }
 
-export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Type, genres, menuItems, APIRoute};
+export {REPLACED_ID, PEOPLE_COUNT_MIN, PEOPLE_COUNT_MAX, DEFAULT_MENU_SELECTED, ESC_KEY_CODE, AppRoute, Level, Type, Menu, genres, menuItems, APIRoute};

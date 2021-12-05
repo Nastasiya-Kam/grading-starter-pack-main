@@ -3,9 +3,16 @@ import {
   PageHeading,
   HomeLink
 } from 'components/common/common';
+import { useDispatch } from 'react-redux';
+import { changeCurrentItemMenu } from 'store/actions';
 import * as S from './stub-page.styled';
 
-const StubPage = () => (
+const StubPage = ({page}) => {
+  const dispatch = useDispatch();
+
+  dispatch(changeCurrentItemMenu(page));
+
+  return (
   <MainLayout>
     <S.Main forwardedAs="main">
       <PageHeading>
@@ -15,6 +22,6 @@ const StubPage = () => (
       <S.PageText>А пока можешь <HomeLink /></S.PageText>
     </S.Main>
   </MainLayout>
-);
+)};
 
 export default StubPage;
