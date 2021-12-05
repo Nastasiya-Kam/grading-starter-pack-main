@@ -22,4 +22,9 @@ const fetchQuestAction = (id) =>
     dispatch(isQuestLoading(false));
   };
 
-export { fetchQuestsAction, fetchQuestAction };
+const postOrderAction = ({name, peopleCount, phone, isLegal}) =>
+  async (dispatch, _getState, api) => {
+    await api.post(APIRoute.Order, {name, peopleCount, phone, isLegal});
+  }
+
+export { fetchQuestsAction, fetchQuestAction, postOrderAction };
