@@ -1,10 +1,7 @@
 const REPLACED_ID = ':id';
-const PEOPLE_COUNT_MIN = 0;
-const PEOPLE_COUNT_MAX = 1;
 const DEFAULT_MENU_SELECTED = 'Квесты';
 const ESC_KEY_CODE = 27;
-const POSITION = [59.968137, 30.316272];
-const ZOOM = 17;
+const EMPTY_LENGTH = 0;
 
 const AppRoute = {
   Home: '/',
@@ -13,7 +10,7 @@ const AppRoute = {
   Beginners: '/beginners',
   Reviews: '/reviews',
   Stocks: '/stocks',
-}
+};
 
 const Level = {
   EASY: {
@@ -84,14 +81,11 @@ const Menu = {
   },
 };
 
-const genres = [Type.ALL, Type.ADVENTURES, Type.HORROR, Type.MYSTIC, Type.DETECTIVE, Type.SCI_FI]
-const menuItems = [Menu.QUESTS, Menu.BEFINNERS, Menu.REVIEWS, Menu.STOCKS, Menu.CONTACTS];
-
 const APIRoute = {
   Quests: '/quests',
   Quest: '/quests/:id',
   Order: '/orders',
-}
+};
 
 const User = {
   Name: 'booking-name',
@@ -109,7 +103,10 @@ const ErrorMessage = {
   Correct: '',
 };
 
-const EMPTY_LENGTH = 0;
+const MapSetting = {
+  Position: [59.968137, 30.316272],
+  Zoom: 17,
+};
 
 const Contact = {
   PHONE: {
@@ -120,25 +117,31 @@ const Contact = {
     href: 'mailto:info@escape-room.ru',
     text: 'info@escape-room.ru',
   },
-}
+};
+
+const PeopleCountLength = {
+  Max: 1,
+  Min: 0,
+};
+
+const genres = [Type.ALL, Type.ADVENTURES, Type.HORROR, Type.MYSTIC, Type.DETECTIVE, Type.SCI_FI];
+const menuItems = [Menu.QUESTS, Menu.BEFINNERS, Menu.REVIEWS, Menu.STOCKS, Menu.CONTACTS];
 
 export {
   REPLACED_ID,
-  PEOPLE_COUNT_MIN,
-  PEOPLE_COUNT_MAX,
   DEFAULT_MENU_SELECTED,
   ESC_KEY_CODE,
-  POSITION,
-  ZOOM,
+  EMPTY_LENGTH,
   AppRoute,
   Level,
   Type,
   Menu,
-  genres,
-  menuItems,
   APIRoute,
   User,
   ErrorMessage,
-  EMPTY_LENGTH,
-  Contact
+  MapSetting,
+  Contact,
+  PeopleCountLength,
+  genres,
+  menuItems
 };

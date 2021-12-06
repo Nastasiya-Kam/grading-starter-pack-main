@@ -1,4 +1,4 @@
-import { ESC_KEY_CODE, Type, Level, PEOPLE_COUNT_MAX, PEOPLE_COUNT_MIN } from 'const';
+import { ESC_KEY_CODE, Type, Level, PeopleCountLength } from 'const';
 import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
 import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
@@ -54,7 +54,7 @@ const getType = (type) => {
 };
 
 const getTypeQuests = (quests, type) => (type === Type.ALL.type) ? quests : quests.filter((quest) => quest.type === type);
-const getPeopleCountTemplate = (peopleCount) => `${peopleCount[PEOPLE_COUNT_MIN]}–${peopleCount[PEOPLE_COUNT_MAX]} чел`;
+const getPeopleCountTemplate = (peopleCount) => `${peopleCount[PeopleCountLength.Min]}–${peopleCount[PeopleCountLength.Max]} чел`;
 
 const pressEscKey = (callback) => {
   return (evt) => {
@@ -69,4 +69,4 @@ const checkPhone = (phone) => {
   return patternPhone.test(phone);
 };
 
-export {getLevel, getIcon, getType, getTypeQuests, getPeopleCountTemplate, pressEscKey, checkPhone};
+export { getLevel, getIcon, getType, getTypeQuests, getPeopleCountTemplate, pressEscKey, checkPhone };

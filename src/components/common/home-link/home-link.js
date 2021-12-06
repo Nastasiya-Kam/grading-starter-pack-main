@@ -1,4 +1,4 @@
-import { DEFAULT_MENU_SELECTED } from 'const';
+import { AppRoute, DEFAULT_MENU_SELECTED } from 'const';
 import { useDispatch } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
 import * as S from './home-link.styled';
@@ -11,7 +11,7 @@ const HomeLink = () => {
 
   return (
   <S.Link
-    to="/"
+    to={AppRoute.Home}
     onClick={() => onClick()}
   >
     Вернуться на главную страницу
