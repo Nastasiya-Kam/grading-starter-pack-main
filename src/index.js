@@ -4,12 +4,12 @@ import { Provider } from 'react-redux';
 import App from 'components/app/app';
 import { createAPI } from 'services/api';
 import { fetchQuestsAction } from 'store/api-actions';
-import { questsData } from 'store/reducer';
+import { rootReducer } from 'store/root-reducer';
 
 const api = createAPI();
 
 const store = configureStore({
-  reducer: questsData,
+  reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: {

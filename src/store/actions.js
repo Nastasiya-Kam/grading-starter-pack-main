@@ -1,12 +1,12 @@
 import { createAction } from '@reduxjs/toolkit';
 
 const ActionType = {
-  ChangeType: 'genre/changeType',
+  ChangeType: 'user/changeType',
+  ChangeCurrentItemMenu: 'user/changeCurrentItemMenu',
   LoadQuests: 'quests/loadQuests',
   IsDataLoading: 'quests/isDataLoading',
   LoadQuest: 'quests/loadQuest',
-  IsQuestLoading: 'quests/isQuestLoading',
-  ChangeCurrentItemMenu: 'menu/changeCurrentItemMenu'
+  IsQuestLoading: 'quests/isQuestLoading'
 }
 
 const changeType = createAction(

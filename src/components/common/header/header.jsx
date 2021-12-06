@@ -2,7 +2,7 @@ import logo from 'assets/img/logo.svg';
 import { AppRoute, Contact, Menu, menuItems } from 'const';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
-import { getCurrentItemMenu } from 'store/selectors';
+import { getCurrentItemMenu } from 'store/user-process/selectors';
 import * as S from './header.styled';
 
 const Header = () => {

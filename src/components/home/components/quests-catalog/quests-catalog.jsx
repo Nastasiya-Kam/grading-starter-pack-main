@@ -3,8 +3,9 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { getLevel, getIcon, getPeopleCountTemplate } from 'utils/utils';
 import { genres, AppRoute, REPLACED_ID } from 'const';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentType, getQuestsByType, getDataLoadingStatus } from 'store/selectors';
 import { changeType } from 'store/actions';
+import { getCurrentType } from 'store/user-process/selectors';
+import { getDataLoadingStatus, getQuestsByType } from 'store/quests-data/selectors';
 import * as S from './quests-catalog.styled';
 
 const QuestsCatalog = () => {

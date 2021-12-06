@@ -9,7 +9,7 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { getType, getLevel, getPeopleCountTemplate } from 'utils/utils';
 import { fetchQuestAction } from 'store/api-actions';
-import { getCurrentQuest, getLoadingStatus } from 'store/selectors';
+import { getCurrentQuest, getLoadingStatus } from 'store/quests-data/selectors';
 import * as S from './detailed-quest.styled';
 
 const DetailedQuest = ({id}) => {
