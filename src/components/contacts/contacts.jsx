@@ -1,4 +1,5 @@
-import { MainLayout, PageTitle, PageSubtext, InteractiveMap } from 'components/common/common';
+import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
+import { InteractiveMap } from './components/components';
 import contactsMap from 'assets/img/contacts-map.jpg';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
