@@ -1,5 +1,5 @@
 import logo from 'assets/img/logo.svg';
-import { Contact, menuItems } from 'const';
+import { AppRoute, Contact, Menu, menuItems } from 'const';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
 import { getCurrentItemMenu } from 'store/selectors';
@@ -15,7 +15,9 @@ const Header = () => {
 
   return (<S.StyledHeader>
     <S.HeaderWrapper>
-      <S.Logo href="/">
+      <S.Logo
+        href={(currentMenuItem !== Menu.QUESTS.name) ? AppRoute.Home : undefined}
+      >
         <S.Image src={logo} alt="Логотип Escape Room" width="134" height="50" />
       </S.Logo>
 
