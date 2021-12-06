@@ -200,6 +200,17 @@ const QuestFeatureItem = styled.li`
   }
 `;
 
+const PageText = styled.p`
+  margin: 0;
+  margin-bottom: 9px;
+  padding: 0;
+
+  font-size: ${({ theme }) => theme.font.semibase};
+  line-height: 144%;
+
+  color: ${({ theme }) => theme.color.whiteSmoke};
+`;
+
 export {
   Tabs,
   TabItem,
@@ -214,4 +225,5 @@ export {
   QuestImage,
   QuestFeatures,
   QuestFeatureItem,
+  PageText,
 };

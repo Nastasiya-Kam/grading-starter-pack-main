@@ -1,11 +1,16 @@
 import { APIRoute, REPLACED_ID } from 'const';
-import { isQuestLoading, loadQuest, loadQuests } from './actions';
+import { isDataLoading, isQuestLoading, loadQuest, loadQuests } from './actions';
 
 const fetchQuestsAction = () =>
   async (dispatch, _getState, api) => {
-    const {data} = await api.get(APIRoute.Quests);
-
-    dispatch(loadQuests(data));
+    dispatch(isDataLoading(true));
+    try {
+      const {data} = await api.get(APIRoute.Quests);
+      dispatch(loadQuests(data));
+    } catch {
+      dispatch(loadQuests([]));
+    }
+    dispatch(isDataLoading(false));
   };
 
 const fetchQuestAction = (id) =>
@@ -13,12 +18,10 @@ const fetchQuestAction = (id) =>
     dispatch(isQuestLoading(true));
     try {
       const {data} = await api.get(APIRoute.Quest.replace(REPLACED_ID, String(id)));
-
       dispatch(loadQuest(data));
     } catch {
       dispatch(loadQuest(null));
     }
-
     dispatch(isQuestLoading(false));
   };
 

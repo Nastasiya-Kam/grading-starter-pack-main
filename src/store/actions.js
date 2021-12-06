@@ -3,6 +3,7 @@ import { createAction } from '@reduxjs/toolkit';
 const ActionType = {
   ChangeType: 'genre/changeType',
   LoadQuests: 'quests/loadQuests',
+  IsDataLoading: 'quests/isDataLoading',
   LoadQuest: 'quests/loadQuest',
   IsQuestLoading: 'quests/isQuestLoading',
   ChangeCurrentItemMenu: 'menu/changeCurrentItemMenu'
@@ -19,6 +20,13 @@ const loadQuests = createAction(
   ActionType.LoadQuests,
   (quests) => ({
     payload: quests,
+  }),
+);
+
+const isDataLoading = createAction(
+  ActionType.IsDataLoading,
+  (status) => ({
+    payload: status,
   }),
 );
 
@@ -46,6 +54,7 @@ const changeCurrentItemMenu = createAction(
 export {
   changeType,
   loadQuests,
+  isDataLoading,
   loadQuest,
   isQuestLoading,
   changeCurrentItemMenu

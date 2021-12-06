@@ -1,20 +1,25 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
-import * as S from './quests-catalog.styled';
 import { getLevel, getIcon, getPeopleCountTemplate } from 'utils/utils';
 import { genres, AppRoute, REPLACED_ID } from 'const';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCurrentType, getQuestsByType } from 'store/selectors';
+import { getCurrentType, getQuestsByType, getDataLoadingStatus } from 'store/selectors';
 import { changeType } from 'store/actions';
+import * as S from './quests-catalog.styled';
 
 const QuestsCatalog = () => {
-  const quests = useSelector(getQuestsByType);
   const type = useSelector(getCurrentType);
+  const quests = useSelector(getQuestsByType);
+  const isLoading = useSelector(getDataLoadingStatus);
 
   const dispatch = useDispatch();
   const onTypeChange = (type) => {
     dispatch(changeType(type));
   };
+
+  if (isLoading) {
+    return <S.PageText>Загрузка списка самых интересных предложений...</S.PageText>;
+  }
 
   return (
     <>
