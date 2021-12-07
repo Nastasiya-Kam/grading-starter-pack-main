@@ -1,5 +1,5 @@
 import logo from 'assets/img/logo.svg';
-import { AppRoute, Contact, Menu, menuItems } from 'const';
+import { AppRoute, Contact, Menu, menuItems } from 'const/const';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
 import { getCurrentItemMenu } from 'store/user-process/selectors';

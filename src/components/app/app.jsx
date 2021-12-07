@@ -10,8 +10,8 @@ import Home from 'components/home/home';
 import NotFound from 'components/not-found/not-found';
 import StubPage from 'components/stub-page/stub-page';
 import { appTheme } from './common';
+import { AppRoute, Menu } from 'const/const';
 import * as S from './app.styled';
-import { AppRoute, Menu } from 'const';
 
 const App = () => (
   <ThemeProvider theme={appTheme}>

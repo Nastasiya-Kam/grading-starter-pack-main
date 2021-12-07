@@ -103,11 +103,6 @@ const ErrorMessage = {
   Correct: '',
 };
 
-const MapSetting = {
-  Position: [59.968137, 30.316272],
-  Zoom: 17,
-};
-
 const Contact = {
   PHONE: {
     href: 'tel:8 (800) 333-55-99',
@@ -139,7 +134,6 @@ export {
   APIRoute,
   User,
   ErrorMessage,
-  MapSetting,
   Contact,
   PeopleCountLength,
   genres,

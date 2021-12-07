@@ -1,4 +1,4 @@
-import { ESC_KEY_CODE, Type, Level, PeopleCountLength } from 'const';
+import { ESC_KEY_CODE, Type, Level, PeopleCountLength } from 'const/const';
 import { ReactComponent as IconAllQuests } from 'assets/img/icon-all-quests.svg';
 import { ReactComponent as IconAdventures } from 'assets/img/icon-adventures.svg';
 import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';

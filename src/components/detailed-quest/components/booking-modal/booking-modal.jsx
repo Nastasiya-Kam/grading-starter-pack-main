@@ -1,10 +1,10 @@
-import * as S from './booking-modal.styled';
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 import { useEffect, useRef, useState } from 'react';
 import { checkPhone, pressEscKey } from 'utils/utils';
 import { useDispatch } from 'react-redux';
 import { postOrderAction } from 'store/api-actions';
-import { EMPTY_LENGTH, ErrorMessage, User } from 'const';
+import { EMPTY_LENGTH, ErrorMessage, User } from 'const/const';
+import * as S from './booking-modal.styled';
 
 const BookingModal = ({onClose}) => {
   const [isSending, setIsSending] = useState(false);

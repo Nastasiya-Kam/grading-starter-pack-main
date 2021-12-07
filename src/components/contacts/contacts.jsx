@@ -4,7 +4,7 @@ import contactsMap from 'assets/img/contacts-map.jpg';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { changeCurrentItemMenu } from 'store/actions';
-import { Contact, Menu } from 'const';
+import { Contact, Menu } from 'const/const';
 import * as S from './contacts.styled';
 
 const Contacts = () => {

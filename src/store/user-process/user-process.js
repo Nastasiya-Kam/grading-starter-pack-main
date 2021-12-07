@@ -1,5 +1,5 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { DEFAULT_MENU_SELECTED, Type } from 'const';
+import { DEFAULT_MENU_SELECTED, Type } from 'const/const';
 import { changeCurrentItemMenu, changeType } from 'store/actions';
 
 const initialState = {
