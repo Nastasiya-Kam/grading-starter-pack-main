@@ -15,7 +15,7 @@ const getLevel = (level) => {
     case Level.HARD.name:
       return Level.HARD.value;
     default:
-      return Level.UNDEFINED.value;
+      return;
   }
 };
 

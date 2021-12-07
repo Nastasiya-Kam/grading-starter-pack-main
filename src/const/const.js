@@ -25,10 +25,6 @@ const Level = {
     value: 'сложный',
     name: 'hard',
   },
-  UNDEFINED: {
-    value: 'неизвестный',
-    name: 'undefined',
-  },
 };
 
 const Type = {

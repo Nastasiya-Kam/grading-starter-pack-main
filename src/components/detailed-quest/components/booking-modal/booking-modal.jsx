@@ -135,16 +135,18 @@ const BookingModal = ({onClose}) => {
         onSubmit={(evt) => {
           evt.preventDefault();
 
-          dispatch(postOrderAction(
-            {
-              name: nameRef.current.value,
-              peopleCount: Number(peopleCountRef.current.value, 10),
-              phone: phoneRef.current.value,
-              isLegal: isLegalRef.current.checked,
-            },
-            setIsSending,
-            onClose
-          ));
+          if (formValid) {
+            dispatch(postOrderAction(
+              {
+                name: nameRef.current.value,
+                peopleCount: Number(peopleCountRef.current.value, 10),
+                phone: phoneRef.current.value,
+                isLegal: isLegalRef.current.checked,
+              },
+              setIsSending,
+              onClose
+            ));
+          }
         }}
       >
         <S.BookingField>
