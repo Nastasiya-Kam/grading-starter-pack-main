@@ -1,12 +1,13 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { getLevel, getIcon, getPeopleCountTemplate } from 'utils/utils';
-import { genres, AppRoute, REPLACED_ID } from 'const/const';
+import { genres, REPLACED_ID } from 'const/const';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeType } from 'store/actions';
 import { getCurrentType } from 'store/user-process/selectors';
 import { getDataLoadingStatus, getQuestsByType } from 'store/quests-data/selectors';
 import * as S from './quests-catalog.styled';
+import { AppRoute } from 'const/routes';
 
 const QuestsCatalog = () => {
   const type = useSelector(getCurrentType);

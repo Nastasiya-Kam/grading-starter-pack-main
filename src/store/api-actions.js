@@ -1,4 +1,5 @@
-import { APIRoute, REPLACED_ID } from 'const/const';
+import { REPLACED_ID } from 'const/const';
+import { APIRoute } from 'const/routes';
 import { isDataLoading, isQuestLoading, loadQuest, loadQuests } from './actions';
 
 const fetchQuestsAction = () =>

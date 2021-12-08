@@ -1,4 +1,5 @@
-import { AppRoute, DEFAULT_MENU_SELECTED } from 'const/const';
+import { DEFAULT_MENU_SELECTED } from 'const/const';
+import { AppRoute } from 'const/routes';
 import { useDispatch } from 'react-redux';
 import { changeCurrentItemMenu } from 'store/actions';
 import * as S from './home-link.styled';

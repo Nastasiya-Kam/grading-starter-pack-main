@@ -1,16 +1,9 @@
+import { AppRoute } from './routes';
+
 const REPLACED_ID = ':id';
 const DEFAULT_MENU_SELECTED = 'Квесты';
 const ESC_KEY_CODE = 27;
 const EMPTY_LENGTH = 0;
-
-const AppRoute = {
-  Home: '/',
-  Contacts: '/contacts',
-  DetailedQuest: '/detailed-quest/:id',
-  Beginners: '/beginners',
-  Reviews: '/reviews',
-  Stocks: '/stocks',
-};
 
 const Level = {
   EASY: {
@@ -77,12 +70,6 @@ const Menu = {
   },
 };
 
-const APIRoute = {
-  Quests: '/quests',
-  Quest: '/quests/:id',
-  Order: '/orders',
-};
-
 const User = {
   Name: 'booking-name',
   Phone: 'booking-phone',
@@ -123,11 +110,9 @@ export {
   DEFAULT_MENU_SELECTED,
   ESC_KEY_CODE,
   EMPTY_LENGTH,
-  AppRoute,
   Level,
   Type,
   Menu,
-  APIRoute,
   User,
   ErrorMessage,
   Contact,
