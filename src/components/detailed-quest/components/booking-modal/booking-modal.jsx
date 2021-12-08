@@ -151,7 +151,7 @@ const BookingModal = ({onClose}) => {
       >
         <S.BookingField>
           <S.BookingLabel htmlFor="booking-name">Ваше Имя</S.BookingLabel>
-          <S.BookingFieldError>{(nameDirty && nameError) && nameError}</S.BookingFieldError>
+          {(nameDirty && nameError) && <S.BookingFieldError>{nameError}</S.BookingFieldError>}
           <S.BookingInput
             disabled={isSending}
             ref={nameRef}
@@ -169,7 +169,7 @@ const BookingModal = ({onClose}) => {
           <S.BookingLabel htmlFor="booking-phone">
             Контактный телефон
           </S.BookingLabel>
-          <S.BookingFieldError>{(phoneDirty && phoneError) && phoneError}</S.BookingFieldError>
+          {(phoneDirty && phoneError) && <S.BookingFieldError>{phoneError}</S.BookingFieldError>}
           <S.BookingInput
             disabled={isSending}
             ref={phoneRef}
@@ -187,7 +187,7 @@ const BookingModal = ({onClose}) => {
           <S.BookingLabel htmlFor="booking-people">
             Количество участников
           </S.BookingLabel>
-          <S.BookingFieldError>{(peopleCountDirty && peopleCountError) && peopleCountError}</S.BookingFieldError>
+          {(peopleCountDirty && peopleCountError) && <S.BookingFieldError>{peopleCountError}</S.BookingFieldError>}
           <S.BookingInput
             disabled={isSending}
             ref={peopleCountRef}
@@ -207,7 +207,7 @@ const BookingModal = ({onClose}) => {
           Отправить заявку
         </S.BookingSubmit>
         <S.BookingCheckboxWrapper>
-          <S.BookingFieldError>{(legalDirty && legalError) && legalError}</S.BookingFieldError>
+          {(legalDirty && legalError) && <S.BookingFieldError>{legalError}</S.BookingFieldError>}
           <S.BookingCheckboxInput
             disabled={isSending}
             ref={isLegalRef}
